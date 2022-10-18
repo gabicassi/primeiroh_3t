@@ -1,6 +1,6 @@
-//alert("");
-//console.log("");
-//document.write("");
+//alert('Oi, eu sou o alert!')
+//console.log('Oi, eu estou no console');
+//document.write('aula de PC');
 
 var tabuada = 8;
 
@@ -36,6 +36,22 @@ function total(){
     let juros = document.getElementById("ju").value;
     let mes = document.getElementById("mes").value;
     let resultado = 0;
+   
+   if(!Number(valor)){
+    alert( "O juros deve ser um número.")   
+    return
+}
+if(!Number(mes)){
+    alert( "O mês deve ser um número.")   
+    return
+}
+if(!Number(juros)){
+    alert( "O valor deve ser um número.")   
+    return
+}
+
+
+   
     for(let i = 1; i <= mes; i++){
         resultado = valor * (1+(juros/100));
         valor = resultado;
@@ -43,27 +59,24 @@ function total(){
     
     document.write("O Resultado é " + resultado);
 }
- function soma(){
- let n1 = document.getElementById("n1").value;
- let n2 = document.getElementById("n2").value;
- let n3 = document.getElementById("n3").value;
- let r = number(n1) + Number(n2) + Number(n3);
- document.getElementById("resultado").innerHTML = r;
- }
-
-
- function media(){
+function soma(){
     let n1 = document.getElementById("n1").value;
     let n2 = document.getElementById("n2").value;
     let n3 = document.getElementById("n3").value;
-    let r = (number(n1) + Number(n2) + Number(n3))/3;
+    let r = Number(n1) + Number(n2) + Number(n3);
     document.getElementById("resultado").innerHTML = r;
- }
-
- function necessário (){
+}
+function média(){
     let n1 = document.getElementById("n1").value;
     let n2 = document.getElementById("n2").value;
     let n3 = document.getElementById("n3").value;
-    let r = 180 - (number(n1) + Number(n2) + Number(n3))/3;
+    let r = (Number(n1) + Number(n2) + Number(n3))/3;
     document.getElementById("resultado").innerHTML = r;
- }
+}
+function precisa(){
+    let n1 = document.getElementById("n1").value;
+    let n2 = document.getElementById("n2").value;
+    let n3 = document.getElementById("n3").value;
+    let r = 180 - (Number(n1) + Number(n2) + Number(n3));
+    document.getElementById("resultado").innerHTML = r;
+}
